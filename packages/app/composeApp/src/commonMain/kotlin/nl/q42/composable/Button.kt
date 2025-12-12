@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -14,11 +14,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import nl.q42.ViewController
-import nl.q42.common.ButtonComponent
-import nl.q42.common.ButtonVariant
-import nl.q42.common.core.Locale
-import nl.q42.core.AppInstance
+import me.vxti.ViewController
+import me.vxti.common.ButtonComponent
+import me.vxti.common.ButtonVariant
+import me.vxti.common.core.Locale
+import me.vxti.core.AppInstance
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

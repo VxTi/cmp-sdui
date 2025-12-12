@@ -1,4 +1,4 @@
-package nl.q42.server.middleware
+package me.vxti.server.middleware
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry

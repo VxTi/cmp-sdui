@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -6,9 +6,9 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import nl.q42.ViewController
-import nl.q42.common.*
-import nl.q42.common.screen.Screen
+import me.vxti.ViewController
+import me.vxti.common.*
+import me.vxti.common.screen.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

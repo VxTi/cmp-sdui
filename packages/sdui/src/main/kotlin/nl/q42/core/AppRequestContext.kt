@@ -1,6 +1,6 @@
-package nl.q42.core
+package me.vxti.core
 
-import nl.q42.common.core.Locale
+import me.vxti.common.core.Locale
 
 class AppRequestContext(
     var locale: Locale?,

@@ -1,4 +1,4 @@
-package nl.q42.common.core
+package me.vxti.common.core
 
 enum class Locale
     (val value: String) {

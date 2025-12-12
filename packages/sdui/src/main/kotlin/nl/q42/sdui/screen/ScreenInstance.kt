@@ -1,9 +1,9 @@
-package nl.q42.sdui.screen
+package me.vxti.sdui.screen
 
-import nl.q42.common.ServerComponent
-import nl.q42.common.RequiresAppVersion
-import nl.q42.common.screen.Screen
-import nl.q42.core.AppRequestContext
+import me.vxti.common.ServerComponent
+import me.vxti.common.RequiresAppVersion
+import me.vxti.common.screen.Screen
+import me.vxti.core.AppRequestContext
 
 interface ScreenInstance {
 

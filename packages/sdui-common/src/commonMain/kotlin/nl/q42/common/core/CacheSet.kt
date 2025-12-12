@@ -1,6 +1,6 @@
-package nl.q42.common.core
+package me.vxti.common.core
 
-import nl.q42.common.screen.Screen
+import me.vxti.common.screen.Screen
 
 /*
 data class CacheSetEntry {

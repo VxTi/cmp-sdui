@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -9,10 +9,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import nl.q42.ViewController
-import nl.q42.common.TextComponent
-import nl.q42.common.TextFormatting
-import nl.q42.common.TextSize
+import me.vxti.ViewController
+import me.vxti.common.TextComponent
+import me.vxti.common.TextFormatting
+import me.vxti.common.TextSize
 
 @Composable
 internal fun TextComponentDrawable(component: TextComponent, controller: ViewController) {

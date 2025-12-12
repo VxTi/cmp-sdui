@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -36,11 +36,11 @@ import androidx.compose.ui.semantics.focused
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import nl.q42.ViewController
-import nl.q42.common.SearchBarComponent
-import nl.q42.common.core.Locale
-import nl.q42.core.AppInstance
-import nl.q42.core.requestFocusAsync
+import me.vxti.ViewController
+import me.vxti.common.SearchBarComponent
+import me.vxti.common.core.Locale
+import me.vxti.core.AppInstance
+import me.vxti.core.requestFocusAsync
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

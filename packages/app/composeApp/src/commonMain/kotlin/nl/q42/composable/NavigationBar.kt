@@ -1,7 +1,7 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.runtime.Composable
-import nl.q42.ViewController
+import me.vxti.ViewController
 
 @Composable
 internal expect fun NavigationBar(controller: ViewController)

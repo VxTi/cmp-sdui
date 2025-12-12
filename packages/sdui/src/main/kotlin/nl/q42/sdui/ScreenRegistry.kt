@@ -1,9 +1,9 @@
-package nl.q42.sdui
+package me.vxti.sdui
 
-import nl.q42.common.screen.Screen
-import nl.q42.common.screen.ScreenTab
-import nl.q42.core.AppRequestContext
-import nl.q42.sdui.screen.*
+import me.vxti.common.screen.Screen
+import me.vxti.common.screen.ScreenTab
+import me.vxti.core.AppRequestContext
+import me.vxti.sdui.screen.*
 import org.springframework.stereotype.Service
 
 @Service

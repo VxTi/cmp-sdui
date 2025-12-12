@@ -1,4 +1,4 @@
-package nl.q42.common.screen
+package me.vxti.common.screen
 
 import kotlinx.serialization.Serializable
 

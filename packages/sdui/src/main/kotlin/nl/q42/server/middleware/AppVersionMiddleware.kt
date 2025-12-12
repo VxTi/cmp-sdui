@@ -1,10 +1,10 @@
-package nl.q42.server.middleware
+package me.vxti.server.middleware
 
 import com.google.gson.Gson
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import nl.q42.common.RequestHeader
-import nl.q42.server.ErrorResponse
+import me.vxti.common.RequestHeader
+import me.vxti.server.ErrorResponse
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor

@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -23,17 +23,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import coil3.compose.AsyncImage
-import nl.q42.ViewController
+import me.vxti.ViewController
 import androidx.compose.ui.unit.dp
-import nl.q42.common.ListItemContainer
-import nl.q42.common.TransactionListItem
-import nl.q42.common.core.Locale
-import nl.q42.core.AppInstance
+import me.vxti.common.ListItemContainer
+import me.vxti.common.TransactionListItem
+import me.vxti.common.core.Locale
+import me.vxti.core.AppInstance
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import nl.q42.common.CurrencyType
-import nl.q42.common.ListItem
+import me.vxti.common.CurrencyType
+import me.vxti.common.ListItem
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -192,7 +192,7 @@ fun PreviewTransactionListItem() {
             "Transaction 1",
             "Description 1",
             "$10.00",
-            nl.q42.common.CurrencyType.USD,
+            me.vxti.common.CurrencyType.USD,
             "https://cdn-icons-png.flaticon.com/512/25/25069.png",
             itemId = "item-1",
         ),

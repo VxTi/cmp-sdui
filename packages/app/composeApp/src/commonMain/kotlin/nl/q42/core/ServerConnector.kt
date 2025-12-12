@@ -1,4 +1,4 @@
-package nl.q42.core
+package me.vxti.core
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -8,12 +8,12 @@ import io.ktor.client.request.header
 import io.ktor.client.request.parameter
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import nl.q42.common.RequestHeader
-import nl.q42.common.SDUIPolymorphicSerializer
-import nl.q42.common.ScreenResponse
-import nl.q42.common.core.QueryParameter
-import nl.q42.common.core.ServerRoute
-import nl.q42.local.getLocalDevelopmentUri
+import me.vxti.common.RequestHeader
+import me.vxti.common.SDUIPolymorphicSerializer
+import me.vxti.common.ScreenResponse
+import me.vxti.common.core.QueryParameter
+import me.vxti.common.core.ServerRoute
+import me.vxti.local.getLocalDevelopmentUri
 
 class ServerConnector(private val appInstance: AppInstance) {
     val serverBaseUrl = getLocalDevelopmentUri();

@@ -1,13 +1,13 @@
-package nl.q42.server.routes
+package me.vxti.server.routes
 
-import nl.q42.common.RequestHeader
-import nl.q42.common.ScreenResponse
-import nl.q42.common.core.QueryParameter
-import nl.q42.common.core.ServerRoute
-import nl.q42.common.screen.Screen
-import nl.q42.core.AppRequestContext
-import nl.q42.core.exceptions.ScreenNotFoundException
-import nl.q42.sdui.ScreenRegistry
+import me.vxti.common.RequestHeader
+import me.vxti.common.ScreenResponse
+import me.vxti.common.core.QueryParameter
+import me.vxti.common.core.ServerRoute
+import me.vxti.common.screen.Screen
+import me.vxti.core.AppRequestContext
+import me.vxti.core.exceptions.ScreenNotFoundException
+import me.vxti.sdui.ScreenRegistry
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping

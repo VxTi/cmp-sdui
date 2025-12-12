@@ -1,4 +1,4 @@
-package nl.q42.server
+package me.vxti.server
 
 data class ErrorResponse(val message: String?)
 

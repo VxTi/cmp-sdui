@@ -1,4 +1,4 @@
-package nl.q42
+package me.vxti
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,9 +13,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import nl.q42.composable.NavigationBar
-import nl.q42.composable.ServerDrivenScreen
-import nl.q42.composable.theme.AppTheme
+import me.vxti.composable.NavigationBar
+import me.vxti.composable.ServerDrivenScreen
+import me.vxti.composable.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 

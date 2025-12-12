@@ -1,8 +1,8 @@
-package nl.q42.common.screen
+package me.vxti.common.screen
 
 import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable
-import nl.q42.common.ServerComponent
+import me.vxti.common.ServerComponent
 
 private const val defaultScreenCacheExpirationDurationMs = 5 * 60 * 1000L
 

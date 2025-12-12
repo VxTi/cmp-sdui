@@ -1,4 +1,4 @@
-package nl.q42.common
+package me.vxti.common
 
 object ComponentType {
     const val TEXT: String = "TEXT_COMPONENT"

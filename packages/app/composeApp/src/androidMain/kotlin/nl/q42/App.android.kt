@@ -1,11 +1,9 @@
-package nl.q42
+package me.vxti
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import kotlinx.coroutines.coroutineScope
-import nl.q42.core.AppInstance
 
 class AppActivity : ComponentActivity() {
 

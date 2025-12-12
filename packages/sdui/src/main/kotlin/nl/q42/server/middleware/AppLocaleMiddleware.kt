@@ -1,9 +1,9 @@
-package nl.q42.server.middleware
+package me.vxti.server.middleware
 
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import nl.q42.common.RequestHeader
-import nl.q42.common.core.Locale
+import me.vxti.common.RequestHeader
+import me.vxti.common.core.Locale
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor
 

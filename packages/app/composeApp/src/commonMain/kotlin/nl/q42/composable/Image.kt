@@ -1,12 +1,12 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
-import nl.q42.ViewController
-import nl.q42.common.ImageComponent
+import me.vxti.ViewController
+import me.vxti.common.ImageComponent
 
 @Composable
 internal fun ImageComponentDrawable(component: ImageComponent, controller: ViewController) {

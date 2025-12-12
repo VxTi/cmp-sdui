@@ -1,4 +1,4 @@
-package nl.q42.core
+package me.vxti.core
 
 import androidx.compose.ui.focus.FocusRequester
 import kotlinx.coroutines.CoroutineScope

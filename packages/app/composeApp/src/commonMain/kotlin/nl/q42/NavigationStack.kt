@@ -1,8 +1,8 @@
-package nl.q42
+package me.vxti
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
-import nl.q42.common.screen.Screen
+import me.vxti.common.screen.Screen
 
 internal class NavigationStack {
     private val _stack = mutableStateListOf<Screen>()

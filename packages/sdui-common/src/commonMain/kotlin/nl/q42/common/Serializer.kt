@@ -1,4 +1,4 @@
-package nl.q42.common
+package me.vxti.common
 
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic

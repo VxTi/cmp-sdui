@@ -1,4 +1,4 @@
-package nl.q42
+package me.vxti
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import nl.q42.common.Event
-import nl.q42.common.NavigationEvent
-import nl.q42.common.ScreenResponse
-import nl.q42.common.screen.Screen
-import nl.q42.common.screen.ScreenTab
-import nl.q42.core.AppInstance
-import nl.q42.core.CacheSet
-import nl.q42.core.ServerConnector
+import me.vxti.common.Event
+import me.vxti.common.NavigationEvent
+import me.vxti.common.ScreenResponse
+import me.vxti.common.screen.Screen
+import me.vxti.common.screen.ScreenTab
+import me.vxti.core.AppInstance
+import me.vxti.core.CacheSet
+import me.vxti.core.ServerConnector
 
 internal class ViewController(
     val appInstance: AppInstance = AppInstance.fromConfig(),

@@ -1,4 +1,4 @@
-rootProject.name = "kmp-sdui-core"
+rootProject.name = "cmp-sdui"
 
 pluginManagement {
     repositories {

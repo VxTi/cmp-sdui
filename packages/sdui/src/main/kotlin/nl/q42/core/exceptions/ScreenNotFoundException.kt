@@ -1,4 +1,4 @@
-package nl.q42.core.exceptions
+package me.vxti.core.exceptions
 
 class ScreenNotFoundException(message: String?) : Exception(message)
 

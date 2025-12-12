@@ -1,18 +1,18 @@
-package nl.q42.sdui.screen
+package me.vxti.sdui.screen
 
-import nl.q42.common.ButtonComponent
-import nl.q42.common.ButtonVariant
-import nl.q42.common.CurrencyType
-import nl.q42.common.ServerComponent
-import nl.q42.common.ImageComponent
-import nl.q42.common.ListItemContainer
-import nl.q42.common.NavigationEvent
-import nl.q42.common.ScrollableContainer
-import nl.q42.common.SearchBarComponent
-import nl.q42.common.SpacerComponent
-import nl.q42.common.TextComponent
-import nl.q42.common.TransactionListItem
-import nl.q42.core.AppRequestContext
+import me.vxti.common.ButtonComponent
+import me.vxti.common.ButtonVariant
+import me.vxti.common.CurrencyType
+import me.vxti.common.ServerComponent
+import me.vxti.common.ImageComponent
+import me.vxti.common.ListItemContainer
+import me.vxti.common.NavigationEvent
+import me.vxti.common.ScrollableContainer
+import me.vxti.common.SearchBarComponent
+import me.vxti.common.SpacerComponent
+import me.vxti.common.TextComponent
+import me.vxti.common.TransactionListItem
+import me.vxti.core.AppRequestContext
 import org.springframework.stereotype.Component
 
 @Component

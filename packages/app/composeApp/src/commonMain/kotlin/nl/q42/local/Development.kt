@@ -1,3 +1,3 @@
-package nl.q42.local
+package me.vxti.local
 
 expect fun getLocalDevelopmentUri(): String

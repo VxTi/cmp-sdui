@@ -1,10 +1,10 @@
-package nl.q42.common
+package me.vxti.common
 
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
-import nl.q42.common.analytics.AnalyticEvent
-import nl.q42.common.screen.Screen
-import nl.q42.common.screen.ScreenTab
+import me.vxti.common.analytics.AnalyticEvent
+import me.vxti.common.screen.Screen
+import me.vxti.common.screen.ScreenTab
 
 @Serializable
 data class ScreenResponse(

@@ -1,9 +1,9 @@
-package nl.q42.server.routes
+package me.vxti.server.routes
 
-import nl.q42.common.RequestHeader
-import nl.q42.common.ScreenResponse
-import nl.q42.core.AppRequestContext
-import nl.q42.sdui.ScreenRegistry
+import me.vxti.common.RequestHeader
+import me.vxti.common.ScreenResponse
+import me.vxti.core.AppRequestContext
+import me.vxti.sdui.ScreenRegistry
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping

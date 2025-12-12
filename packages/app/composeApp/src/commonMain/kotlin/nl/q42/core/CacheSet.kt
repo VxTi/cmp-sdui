@@ -1,4 +1,4 @@
-package nl.q42.core
+package me.vxti.core
 
 import androidx.compose.ui.input.key.Key
 import io.ktor.util.date.getTimeMillis

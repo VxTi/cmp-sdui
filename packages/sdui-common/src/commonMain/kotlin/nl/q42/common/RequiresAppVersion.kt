@@ -1,4 +1,4 @@
-package nl.q42.common
+package me.vxti.common
 
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CLASS)

@@ -1,4 +1,4 @@
-package nl.q42
+package me.vxti
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -7,7 +7,7 @@ import java.io.IOException
 import java.util.Collections
 
 @SpringBootApplication
-@ComponentScan("nl.q42")
+@ComponentScan("me.vxti")
 object Main {
     @Throws(IOException::class)
     @JvmStatic

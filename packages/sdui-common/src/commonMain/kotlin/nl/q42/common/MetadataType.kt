@@ -1,4 +1,4 @@
-package nl.q42.common
+package me.vxti.common
 
 enum class MetadataType {
     MAXIMIZE_BRIGHTNESS,

@@ -1,4 +1,4 @@
-package nl.q42.composable.theme
+package me.vxti.composable.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

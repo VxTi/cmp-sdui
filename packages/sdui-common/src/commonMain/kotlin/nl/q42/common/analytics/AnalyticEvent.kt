@@ -1,4 +1,4 @@
-package nl.q42.common.analytics
+package me.vxti.common.analytics
 
 interface AnalyticEvent
 

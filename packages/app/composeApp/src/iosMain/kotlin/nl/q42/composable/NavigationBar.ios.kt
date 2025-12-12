@@ -1,4 +1,4 @@
-package nl.q42.composable
+package me.vxti.composable
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.interop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import kotlinx.cinterop.ExperimentalForeignApi
-import nl.q42.ViewController
+import me.vxti.ViewController
 import platform.UIKit.UITabBarController
 import platform.UIKit.UITabBarControllerDelegateProtocol
 import platform.UIKit.UITabBarItem
