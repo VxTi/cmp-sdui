@@ -23,14 +23,13 @@ val SDUIPolymorphicSerializer = SerializersModule {
         subclass(ImageComponent::class, ImageComponent.serializer())
         subclass(CarouselContainerComponent::class, CarouselContainerComponent.serializer())
         subclass(ListItemContainer::class, ListItemContainer.serializer())
-
-        polymorphic(ListItem::class) {
-            // To be implemented
-        }
-
-        polymorphic(IEvent::class) {
-            subclass(NavigationEvent::class, NavigationEvent.serializer())
-        }
     }
 
+    polymorphic(ListItem::class) {
+        // To be implemented
+    }
+
+    polymorphic(IEvent::class) {
+        subclass(NavigationEvent::class, NavigationEvent.serializer())
+    }
 }

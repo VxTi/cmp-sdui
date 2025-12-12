@@ -16,4 +16,6 @@ data class NavigationEvent(
      * network strain.
      */
     val prefetch: Boolean = false,
-) : IEvent(EventType.NAVIGATION)
+) : IEvent {
+    override val _type: String = EventType.NAVIGATION
+}

@@ -25,7 +25,6 @@ class NavigationController(
     // Internal mutable StateFlows
     val _loadingState = MutableStateFlow(false)
     val _tabs = MutableStateFlow<List<ScreenTab>>(emptyList())
-    val _currentTabIndex = MutableStateFlow(0)
     val _currentScreen = MutableStateFlow<Screen?>(null)
 
     // Exposed as read-only StateFlows
@@ -83,10 +82,24 @@ class NavigationController(
     }
 
 
-    fun setCurrentScreen(screen: Screen) {
-        _currentScreen.value = screen;
+    fun setCurrentScreen(
+        screen: Screen,
+        navigationAction: ScreenNavigationAction = ScreenNavigationAction.REPLACE
+    ) {
+        val shouldReplaceInStack =
+            (navigationAction.mask and ScreenNavigationAction.REPLACE.mask) != 0
 
-        navHostController.navigate(screen.id)
+        val options = if (shouldReplaceInStack) {
+            navOptions {
+                popUpTo(navHostController.graph.id) {
+                    inclusive = true
+                }
+                launchSingleTop = true
+            }
+        } else navOptions {}
+
+        _currentScreen.value = screen;
+        navHostController.navigate(screen.id, options)
     }
 
     fun getScreenById(screenId: String): Screen? {
@@ -103,7 +116,23 @@ class NavigationController(
  * This is typically the first screen the user sees.
  */
 fun NavigationController.fetchInitialScreen() {
-    fetchScreen("/", ScreenNavigationAction.REPLACE_AND_STORE);
+    suspendScreenState {
+        serverConnector.fetchInitialScreen { screenResponse ->
+            val screen: Screen = screenResponse?.screen ?: return@fetchInitialScreen;
+
+
+            screenCache.put(
+                key = screen.id,
+                data = screen,
+                expiresIn = screen.cacheDurationMs
+            )
+
+            setCurrentScreen(screen)
+            _currentScreen.value = screen
+            _tabs.value = screenResponse.tabs ?: _tabs.value
+            navHostController.navigate(screen.id)
+        }
+    }
 }
 
 /**
@@ -125,7 +154,7 @@ fun NavigationController.suspendScreenState(action: suspend () -> Unit) {
 }
 
 fun NavigationController.refreshScreen() {
-    val currentScreenId = screen.value?.id ?: return;
+    val currentScreenId = screen.value?.id ?: return
 
     fetchScreen(currentScreenId, ScreenNavigationAction.REPLACE_AND_STORE);
 }
@@ -136,19 +165,17 @@ fun NavigationController.refreshScreen() {
  */
 fun NavigationController.fetchScreen(
     screenIdentifier: String,
-    screenNavigationAction: ScreenNavigationAction
+    navigationAction: ScreenNavigationAction
 ) {
     suspendScreenState {
         serverConnector.fetchScreen(screenIdentifier) { screenResponse ->
             val screen: Screen = screenResponse?.screen ?: return@fetchScreen;
             val isCurrent = screen.id == _currentScreen.value?.id
 
-            val canCache =
-                (screenNavigationAction.mask and ScreenNavigationAction.STORE.mask) != 0 && !isCurrent
+            val shouldCacheScreen =
+                (navigationAction.mask and ScreenNavigationAction.STORE.mask) != 0 && !isCurrent
 
-            _currentScreen.value = screen
-
-            if (canCache) {
+            if (shouldCacheScreen) {
                 screenCache.put(
                     key = screen.id,
                     data = screen,
@@ -156,32 +183,15 @@ fun NavigationController.fetchScreen(
                 )
             }
 
-            val shouldPushToStack =
-                (screenNavigationAction.mask and ScreenNavigationAction.PUSH.mask) != 0 && !isCurrent
+            val requiresScreenUpdate =
+                navigationAction.mask and (
+                        ScreenNavigationAction.REPLACE.mask or
+                                ScreenNavigationAction.REPLACE_AND_STORE.mask
+                        ) != 0
 
-            val shouldReplaceInStack =
-                (screenNavigationAction.mask and ScreenNavigationAction.REPLACE.mask) != 0 && !isCurrent
+            if (!requiresScreenUpdate) return@fetchScreen
 
-            println("Navigation stack action - push: $shouldPushToStack, replace: $shouldReplaceInStack")
-
-
-            _tabs.value = screenResponse.tabs ?: _tabs.value
-
-            if (!shouldPushToStack && !shouldReplaceInStack) {
-                return@fetchScreen
-            }
-
-            setCurrentScreen(screen)
-            val options = if (shouldReplaceInStack) {
-                navOptions {
-                    popUpTo(navHostController.graph.id) {
-                        inclusive = true
-                    }
-                    launchSingleTop = true
-                }
-            } else navOptions {}
-
-            navHostController.navigate(screen.id, options)
+            setCurrentScreen(screen, navigationAction)
         }
     }
 }

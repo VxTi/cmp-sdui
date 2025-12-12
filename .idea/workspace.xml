@@ -9,62 +9,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a771a870-8ced-46ad-8281-1d9ae519f059" name="Changes" comment="Include workspace, upgrade android compile version">
-      <change afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ServerDrivenScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/EventBus.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/NavigationController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/ScreenNavigationAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/IIdentifiable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/ButtonComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/ImageComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/SearchBarComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/SpacerComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/TextComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/container/CarouselContainerComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/container/ListItemContainer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/models/ComponentType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/models/IComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/components/models/ListItemBase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/NavigationEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/models/EventType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/models/IEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/models/IScreen.kt" afterDir="false" />
+    <list default="true" id="a771a870-8ced-46ad-8281-1d9ae519f059" name="Changes" comment="Refactored project massively">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/androidMain/kotlin/nl/vxti/App.android.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/androidMain/kotlin/nl/vxti/App.android.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/androidMain/kotlin/nl/vxti/composable/NavigationBar.android.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/NavigationStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/navigation/NavigationController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/ViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/ViewController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/Button.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ButtonComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ImageComposable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ListItems.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ListItems.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/NavigationBar.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ScreenComposer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ScreenComposer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ScrollContainer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/ScrollContainer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/SearchBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/SearchBar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/Spacer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/Spacer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/TextComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/composable/TextComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/iosMain/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/iosMain/kotlin/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/iosMain/kotlin/nl/vxti/composable/NavigationBar.ios.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/app/iosApp/iosApp.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/iosApp/iosApp.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/Components.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/Events.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/ScreenResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/ScreenResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/NavigationController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/NavigationController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/ServerConnector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/composeApp/src/commonMain/kotlin/nl/vxti/core/ServerConnector.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/Serializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/Serializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/ServerTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/ServerTypes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/screen/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/screen/Screen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/ScreenRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/ScreenRegistry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/ProfileScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/ProfileScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/ScreenInstance.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/SearchScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/SearchScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/SettingsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/SettingsScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/server/routes/ScreenRoute.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/server/routes/ScreenRoute.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/NavigationEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/NavigationEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/models/IEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sdui-common/src/commonMain/kotlin/nl/vxti/common/events/models/IEvent.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +215,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Backend.executor": "Debug",
+    "Gradle.Backend.executor": "Run",
     "Gradle.Building Kotlin artifacts for Build :app:composeApp:embedAndSignAppleFrameworkForXcode.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -274,6 +227,9 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.keymap",
     "structure.view.defaults.are.configured": "true"
   }
@@ -284,7 +240,7 @@
       <recent name="nl.vxti.common.components" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Backend">
+  <component name="RunManager" selected="Xcode Application.iOS">
     <configuration name="Android" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="cmp-sdui.app.composeApp" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -423,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765529056035</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactored project massively">
+      <option name="closed" value="true" />
+      <created>1765541675581</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765541675581</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -432,7 +396,8 @@
     <MESSAGE value="Updated package prefix to `me.vxti`" />
     <MESSAGE value="Updated package prefix to `nl.vxti`" />
     <MESSAGE value="Include workspace, upgrade android compile version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Include workspace, upgrade android compile version" />
+    <MESSAGE value="Refactored project massively" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored project massively" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -441,6 +406,11 @@
           <url>file://$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/sdui/screen/models/IScreen.kt</url>
           <line>28</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/packages/sdui/src/main/kotlin/nl/vxti/server/routes/ApplicationInitiationRoute.kt</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -57,4 +57,16 @@ class ServerConnector(private val appInstance: AppInstance) {
             println("An error occurred whilst attempting to deserialize response: ${exception.message}")
         }
     }
+
+    suspend fun fetchInitialScreen(callback: (ScreenResponse?) -> Unit) {
+        try {
+            fetch<ScreenResponse>(
+                this.appInstance,
+                "/"
+            )
+                .let { response -> callback(response) }
+        } catch (exception: Exception) {
+            println("An error occurred whilst attempting to deserialize response: ${exception.message}")
+        }
+    }
 }

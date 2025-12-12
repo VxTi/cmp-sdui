@@ -1,24 +1,13 @@
-# Compose Multiplatform Application
+# Compose Multiplatform SDUI
 
-## Before running!
- - check your system with [KDoctor](https://github.com/Kotlin/kdoctor)  
- - install JDK 17 or higher on your machine  
- - add `local.properties` file to the project root and set a path to Android SDK there  
+A Compose Multiplatform library for building Server-Driven UI (SDUI) applications. This library
+allows you to define your UI on the server and render it on your Android, iOS, and desktop clients
+using Jetpack Compose.
 
-### Android
-To run the application on android device/emulator:  
- - open project in Android Studio and run imported android run configuration  
+## Features
 
-To build the application bundle:  
- - run `./gradlew :composeApp:assembleDebug`  
- - find `.apk` file in `composeApp/build/outputs/apk/debug/composeApp-debug.apk`  
-
-Run android UI tests on the connected device: `./gradlew :composeApp:connectedDebugAndroidTest`
-
-### iOS
-To run the application on iPhone device/simulator:  
- - Open `iosApp/iosApp.xcproject` in Xcode and run standard configuration  
- - Or use [Kotlin Multiplatform Mobile plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) for Android Studio  
-
-Run iOS simulator UI tests: `./gradlew :composeApp:iosSimulatorArm64Test`  
-
+* **Cross-Platform:** Write your UI once on the server and have it render on Android, iOS, and
+  desktop.
+* **Server-Driven:** Update your UI without shipping a new version of your app.
+* **Flexible:** Supports a variety of UI components out of the box.
+* **Extensible:** Easily create and use your own custom components.
