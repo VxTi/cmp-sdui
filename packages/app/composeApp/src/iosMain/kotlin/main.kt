@@ -1,6 +1,6 @@
 import androidx.compose.ui.window.ComposeUIViewController
-import me.vxti.App
-import me.vxti.ViewController
+import nl.vxti.App
+import nl.vxti.ViewController
 import platform.UIKit.UIViewController
 
 fun MainViewController(): UIViewController {

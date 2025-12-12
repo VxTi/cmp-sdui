@@ -7,7 +7,7 @@ plugins {
     kotlin("plugin.serialization")
 }
 
-group = "me.vxti"
+group = "nl.vxti"
 version = "1.0"
 
 kotlin {
@@ -28,7 +28,7 @@ kotlin {
 }
 
 android {
-    namespace = "me.vxti.sdui.common"
+    namespace = "nl.vxti.sdui.common"
     compileSdk = 34
 
     defaultConfig {

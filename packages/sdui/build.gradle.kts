@@ -10,7 +10,7 @@ plugins {
     kotlin("plugin.serialization")
 }
 
-group = "me.vxti"
+group = "nl.vxti"
 version = "1.0"
 
 dependencies {
@@ -42,7 +42,7 @@ dependencies {
             )
         }
         capabilities {
-            requireCapability("me.vxti:sdui-common")
+            requireCapability("nl.vxti:sdui-common")
         }
     }
 }
@@ -72,5 +72,5 @@ sourceSets {
 }
 
 springBoot {
-    mainClass.set("me.vxti.Main")
+    mainClass.set("nl.vxti.Main")
 }
