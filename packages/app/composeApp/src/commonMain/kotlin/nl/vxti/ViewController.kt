@@ -18,7 +18,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import nl.vxti.common.screen.Screen
 import nl.vxti.composable.ServerDrivenScreen
 import nl.vxti.core.NavigationController
 import nl.vxti.core.refreshScreen
@@ -40,15 +46,57 @@ internal fun ViewController() {
                 modifier = Modifier.fillMaxSize().padding(12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                if (isLoading) {
-                    CircularProgressIndicator()
-                } else {
-                    currentScreen?.let { screen ->
-                        ServerDrivenScreen(screen, navHostController)
-                    } ?: EmptyScreenFallback(
-                        isRefreshing = isLoading, // Pass the state down
-                        onRefresh = { navigationController.refreshScreen() } // Pass the event up
-                    )
+                AppContent(
+                    modifier = Modifier.fillMaxSize().padding(12.dp),
+                    navHostController = navHostController,
+                    isLoading = isLoading,
+                    currentScreen = currentScreen,
+                    onRefresh = { navigationController.refreshScreen() }
+                )
+            }
+        }
+    }
+}
+
+/**
+ * Determines what content to display based on the current SDUI state.
+ * It now contains the NavHost to correctly initialize the NavHostController.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppContent(
+    modifier: Modifier = Modifier,
+    navHostController: NavHostController,
+    isLoading: Boolean,
+    currentScreen: Screen?,
+    onRefresh: () -> Unit
+) {
+    // The NavHost is essential for initializing the navHostController used by TabNavigation.
+    NavHost(navController = navHostController, startDestination = "/") {
+        composable("/") {
+            Column(
+                modifier = modifier,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // This 'when' block now lives inside the single NavHost destination
+                when {
+                    // If we have a screen, show it with pull-to-refresh
+                    currentScreen != null -> {
+                        PullToRefreshBox(isRefreshing = isLoading, onRefresh = onRefresh) {
+                            ServerDrivenScreen(currentScreen, navHostController)
+                        }
+                    }
+                    // While loading the very first screen
+                    isLoading -> {
+                        CircularProgressIndicator()
+                    }
+                    // If no screen is available and not loading (e.g., network error)
+                    else -> {
+                        EmptyScreenFallback(
+                            isRefreshing = isLoading,
+                            onRefresh = onRefresh
+                        )
+                    }
                 }
             }
         }

@@ -142,21 +142,21 @@ fun NavigationController.fetchInitialScreen() {
  */
 fun NavigationController.suspendScreenState(action: suspend () -> Unit) {
     scope.launch {
-        _loadingState.value = true;
+        _loadingState.value = true
+        println("Temporarily suspending screen retrieval")
         try {
             action()
         } catch (e: Exception) {
             println("An error occurred whilst attempting to execute action: ${e.message}")
-        } finally {
-            _loadingState.value = false;
         }
+        _loadingState.value = false;
     }
 }
 
 fun NavigationController.refreshScreen() {
-    val currentScreenId = screen.value?.id ?: return
-
-    fetchScreen(currentScreenId, ScreenNavigationAction.REPLACE_AND_STORE);
+    screen.value?.id?.let {
+        fetchScreen(it, ScreenNavigationAction.REPLACE_AND_STORE);
+    } ?: fetchInitialScreen()
 }
 
 
