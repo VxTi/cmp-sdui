@@ -3,6 +3,7 @@
 .gradle
 .idea/*
 !.idea/scopes
+!.idea/workspace.xml
 .kotlin
 .DS_Store
 build

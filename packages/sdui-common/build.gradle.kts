@@ -29,7 +29,7 @@ kotlin {
 
 android {
     namespace = "nl.vxti.sdui.common"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 21
