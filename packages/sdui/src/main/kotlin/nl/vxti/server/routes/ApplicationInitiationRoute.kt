@@ -3,7 +3,7 @@ package nl.vxti.server.routes
 import nl.vxti.common.RequestHeader
 import nl.vxti.common.ScreenResponse
 import nl.vxti.core.AppRequestContext
-import nl.vxti.sdui.ScreenRegistry
+import nl.vxti.sdui.screen.models.ScreenRegistry
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping

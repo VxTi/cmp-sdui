@@ -1,10 +1,10 @@
-package nl.vxti.sdui
+package nl.vxti.sdui.screen.models
 
 import nl.vxti.common.screen.Screen
 import nl.vxti.common.screen.ScreenTab
+import nl.vxti.common.screen.models.ScreenRoute
 import nl.vxti.core.AppRequestContext
-import nl.vxti.sdui.screen.*
-import nl.vxti.sdui.screen.models.IScreen
+import nl.vxti.sdui.screen.HomeScreen
 import org.springframework.stereotype.Service
 
 @Service
@@ -34,12 +34,12 @@ class ScreenRegistry(private val screens: MutableList<IScreen>) {
 
     companion object {
         val SCREEN_TABS: List<ScreenTab> = listOf<ScreenTab>(
-            ScreenTab("Home", "home.png", HomeScreen.SCREEN_IDENTIFIER),
-            ScreenTab("Search", "search.png", SearchScreen.SCREEN_IDENTIFIER),
-            ScreenTab("Profile", "profile.png", ProfileScreen.SCREEN_IDENTIFIER),
-            ScreenTab("Settings", "settings.png", SettingsScreen.SCREEN_IDENTIFIER)
+            ScreenTab("Home", "https://www.vecteezy.com/vector-art/12528164-home-icon-house-icon-vector-illustration-perfect-for-all-project", ScreenRoute.HOME),
+            ScreenTab("Search", "search.png", ScreenRoute.SEARCH),
+            ScreenTab("Profile", "profile.png", ScreenRoute.PROFILE),
+            ScreenTab("Settings", "settings.png", ScreenRoute.SETTINGS)
         )
 
-        const val DEFAULT_SCREEN_IDENTIFIER = HomeScreen.SCREEN_IDENTIFIER;
+        const val DEFAULT_SCREEN_IDENTIFIER = HomeScreen.Companion.SCREEN_IDENTIFIER;
     }
 }

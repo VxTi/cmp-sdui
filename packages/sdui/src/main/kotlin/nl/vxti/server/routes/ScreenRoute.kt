@@ -7,7 +7,7 @@ import nl.vxti.common.core.ServerRoute
 import nl.vxti.common.screen.Screen
 import nl.vxti.core.AppRequestContext
 import nl.vxti.core.exceptions.ScreenNotFoundException
-import nl.vxti.sdui.ScreenRegistry
+import nl.vxti.sdui.screen.models.ScreenRegistry
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping

@@ -7,6 +7,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -26,9 +27,12 @@ fun TabNavigation(
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
+    val tabs by navigationController.tabs.collectAsState()
+
+    println(tabs)
 
     NavigationBar {
-        navigationController.tabs.value.forEach { bottomBarItem: ScreenTab ->
+        tabs.forEach { bottomBarItem: ScreenTab ->
             val isSelected = currentDestination?.hierarchy?.any {
                 it.hasRoute(bottomBarItem.screenId::class)
             } == true

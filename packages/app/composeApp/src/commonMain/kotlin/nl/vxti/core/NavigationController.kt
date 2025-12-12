@@ -22,12 +22,10 @@ class NavigationController(
     val serverConnector = ServerConnector(appInstance)
     val screenCache = CacheSet<Screen>()
 
-    // Internal mutable StateFlows
     val _loadingState = MutableStateFlow(false)
     val _tabs = MutableStateFlow<List<ScreenTab>>(emptyList())
     val _currentScreen = MutableStateFlow<Screen?>(null)
 
-    // Exposed as read-only StateFlows
     val tabs: StateFlow<List<ScreenTab>> = _tabs.asStateFlow()
     val screen: StateFlow<Screen?> = _currentScreen.asStateFlow()
     val screenStateBusy: StateFlow<Boolean> = _loadingState.asStateFlow()
@@ -127,10 +125,12 @@ fun NavigationController.fetchInitialScreen() {
                 expiresIn = screen.cacheDurationMs
             )
 
-            setCurrentScreen(screen)
-            _currentScreen.value = screen
+            println("Received screen tabs: ${screenResponse.tabs}")
+
             _tabs.value = screenResponse.tabs ?: _tabs.value
-            navHostController.navigate(screen.id)
+
+            println("new tabs: ${_tabs.value}, received: ${screenResponse.tabs}")
+            setCurrentScreen(screen)
         }
     }
 }
@@ -149,6 +149,7 @@ fun NavigationController.suspendScreenState(action: suspend () -> Unit) {
         } catch (e: Exception) {
             println("An error occurred whilst attempting to execute action: ${e.message}")
         }
+        println("Resuming screen retrieval")
         _loadingState.value = false;
     }
 }

@@ -11,6 +11,7 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -19,11 +20,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import nl.vxti.common.screen.Screen
 import nl.vxti.composable.ServerDrivenScreen
 import nl.vxti.core.NavigationController
@@ -73,16 +72,27 @@ fun AppContent(
 ) {
     // The NavHost is essential for initializing the navHostController used by TabNavigation.
     NavHost(navController = navHostController, startDestination = "/") {
+        composable("loading") {
+            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                CircularProgressIndicator()
+            }
+        }
         composable("/") {
             Column(
                 modifier = modifier,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+
                 // This 'when' block now lives inside the single NavHost destination
                 when {
                     // If we have a screen, show it with pull-to-refresh
                     currentScreen != null -> {
-                        PullToRefreshBox(isRefreshing = isLoading, onRefresh = onRefresh) {
+                        val state = rememberPullToRefreshState()
+                        PullToRefreshBox(
+                            state = state,
+                            isRefreshing = isLoading,
+                            onRefresh = onRefresh,
+                        ) {
                             ServerDrivenScreen(currentScreen, navHostController)
                         }
                     }

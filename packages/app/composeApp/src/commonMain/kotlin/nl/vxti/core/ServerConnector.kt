@@ -62,7 +62,7 @@ class ServerConnector(private val appInstance: AppInstance) {
         try {
             fetch<ScreenResponse>(
                 this.appInstance,
-                "/"
+                ServerRoute.INITIAL_SCREEN
             )
                 .let { response -> callback(response) }
         } catch (exception: Exception) {
