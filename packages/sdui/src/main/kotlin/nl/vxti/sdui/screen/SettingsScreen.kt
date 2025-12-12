@@ -1,13 +1,14 @@
 package nl.vxti.sdui.screen
 
-import nl.vxti.common.ServerComponent
-import nl.vxti.common.TextComponent
+import nl.vxti.common.components.TextComponent
+import nl.vxti.common.components.models.IComponent
 import nl.vxti.core.AppRequestContext
+import nl.vxti.sdui.screen.models.IScreen
 
 @org.springframework.stereotype.Component
-class SettingsScreen : ScreenInstance {
+class SettingsScreen : IScreen {
 
-    override fun content(context: AppRequestContext): List<ServerComponent> {
+    override fun content(context: AppRequestContext): List<IComponent> {
         return listOf(
             TextComponent(text = "Settings", contentId = "settings-text-1")
         )

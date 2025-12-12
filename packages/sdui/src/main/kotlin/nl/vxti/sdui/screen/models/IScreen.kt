@@ -1,17 +1,17 @@
-package nl.vxti.sdui.screen
+package nl.vxti.sdui.screen.models
 
-import nl.vxti.common.ServerComponent
 import nl.vxti.common.RequiresAppVersion
+import nl.vxti.common.components.models.IComponent
 import nl.vxti.common.screen.Screen
 import nl.vxti.core.AppRequestContext
 
-interface ScreenInstance {
+interface IScreen {
 
     fun name(): String
 
-    fun content(context: AppRequestContext): List<ServerComponent>;
+    fun content(context: AppRequestContext): List<IComponent>;
 
-    fun canProduceComponent(component: ServerComponent, context: AppRequestContext): Boolean {
+    fun canProduceComponent(component: IComponent, context: AppRequestContext): Boolean {
         val annotation =
             component::class.annotations.find { it is RequiresAppVersion } as? RequiresAppVersion
                 ?: return true;
@@ -22,11 +22,10 @@ interface ScreenInstance {
                 && context.appVersion <= annotation.max
     }
 
-    fun createScreen(context: AppRequestContext): Screen {
+    fun create(context: AppRequestContext): Screen {
         val filteredContent = content(context)
             .filter { component -> canProduceComponent(component, context) }
 
         return Screen(name(), filteredContent);
     }
 }
-

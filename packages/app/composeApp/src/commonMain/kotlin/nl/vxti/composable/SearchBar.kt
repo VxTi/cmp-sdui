@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -18,6 +17,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.text.input.TextFieldLineLimits
 import androidx.compose.foundation.text.input.TextFieldState
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,15 +36,13 @@ import androidx.compose.ui.semantics.focused
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import nl.vxti.ViewController
-import nl.vxti.common.SearchBarComponent
-import nl.vxti.common.core.Locale
-import nl.vxti.core.AppInstance
+import androidx.navigation.compose.rememberNavController
+import nl.vxti.common.components.SearchBarComponent
 import nl.vxti.core.requestFocusAsync
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-internal fun SearchBarDrawable(component: SearchBarComponent, controller: ViewController) {
+internal fun SearchBarDrawable(component: SearchBarComponent) {
     var text by remember { mutableStateOf("") }
     var focussed by remember { mutableStateOf(false) }
     val focusRequester = remember { FocusRequester() }
@@ -96,15 +94,13 @@ internal fun SearchBarDrawable(component: SearchBarComponent, controller: ViewCo
 @Preview
 @Composable
 private fun SearchBarPreview() {
-    val controller = ViewController(AppInstance(1, Locale.NL_NL))
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.TopCenter
     ) {
 
-    SearchBarDrawable(
-        SearchBarComponent("id", "test"),
-        controller
-    )
+        SearchBarDrawable(
+            SearchBarComponent("id", "test"),
+        )
     }
 }

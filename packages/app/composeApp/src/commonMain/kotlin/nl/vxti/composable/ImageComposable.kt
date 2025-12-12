@@ -5,11 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
-import nl.vxti.ViewController
-import nl.vxti.common.ImageComponent
+import nl.vxti.common.components.ImageComponent
 
 @Composable
-internal fun ImageComponentDrawable(component: ImageComponent, controller: ViewController) {
+internal fun ImageComponentDrawable(component: ImageComponent) {
 
     AsyncImage(
         model = component.url,

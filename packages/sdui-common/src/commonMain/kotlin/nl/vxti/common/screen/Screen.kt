@@ -1,8 +1,7 @@
 package nl.vxti.common.screen
 
-import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable
-import nl.vxti.common.ServerComponent
+import nl.vxti.common.components.models.IComponent
 
 private const val defaultScreenCacheExpirationDurationMs = 5 * 60 * 1000L
 
@@ -15,13 +14,13 @@ class Screen {
      */
     val cacheDurationMs: Long;
     val hash: Int
-    val content: List<@Polymorphic ServerComponent>
+    val content: List<IComponent>
     val id: String
 
 
     constructor(
         name: String,
-        content: List<@Polymorphic ServerComponent>,
+        content: List<IComponent>,
         cacheDurationMs: Long = defaultScreenCacheExpirationDurationMs
     ) {
         this.id = name
@@ -30,9 +29,9 @@ class Screen {
         this.cacheDurationMs = cacheDurationMs
     }
 
-    constructor(name: String, vararg content: ServerComponent) : this(name, content.toList())
+    constructor(name: String, vararg content: IComponent) : this(name, content.toList())
 
-    fun getComponentById(contentId: String): ServerComponent? {
+    fun findComponentById(contentId: String): IComponent? {
         for (component in content) {
             if (component.contentId == contentId) {
                 return component

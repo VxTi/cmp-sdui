@@ -32,16 +32,13 @@ class ScreenRoute(private val registry: ScreenRegistry) {
 
         log.info("Incoming screen request for ID \"{}\"", screenIdentifier)
 
-        val screen: Screen? = registry.getByIdentifier(screenIdentifier, context)
-
-        if (screen == null) {
-            throw ScreenNotFoundException(
+        val screen: Screen =
+            registry.getByIdentifier(screenIdentifier, context) ?: throw ScreenNotFoundException(
                 String.format(
                     "Unable to retrieve screen with identifier %s",
                     screenIdentifier
                 )
             )
-        }
 
         return ScreenResponse(screen);
     }

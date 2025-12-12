@@ -1,15 +1,9 @@
-package nl.vxti.common
+package nl.vxti.common.events
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *                 Event definitions                   *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-@Serializable
-sealed class Event(
-    override val _type: String
-) : TypedObject()
+import nl.vxti.common.events.models.EventType
+import nl.vxti.common.events.models.IEvent
 
 @Serializable
 @SerialName(EventType.NAVIGATION)
@@ -22,4 +16,4 @@ data class NavigationEvent(
      * network strain.
      */
     val prefetch: Boolean = false,
-) : Event(EventType.NAVIGATION)
+) : IEvent(EventType.NAVIGATION)

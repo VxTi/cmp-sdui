@@ -22,14 +22,14 @@ kotlin {
     }
 
     android {
-        namespace = "io.vxti"
+        namespace = "nl.vxti"
         compileSdk = 36
 
         defaultConfig {
             minSdk = 24
             targetSdk = 35
 
-            applicationId = "io.vxti.androidApp"
+            applicationId = "nl.vxti.androidApp"
             versionCode = 1
             versionName = "1.0.0"
         }

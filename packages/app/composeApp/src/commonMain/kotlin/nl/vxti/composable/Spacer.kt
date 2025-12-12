@@ -6,11 +6,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import nl.vxti.ViewController
-import nl.vxti.common.SpacerComponent
+import nl.vxti.common.components.SpacerComponent
 
 @Composable
-internal fun SpacerDrawable(component: SpacerComponent, controller: ViewController) {
+internal fun SpacerDrawable(component: SpacerComponent) {
     Spacer(
         modifier = Modifier
             .fillMaxWidth()

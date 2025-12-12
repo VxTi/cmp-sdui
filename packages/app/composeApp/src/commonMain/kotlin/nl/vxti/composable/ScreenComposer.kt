@@ -1,36 +1,19 @@
 package nl.vxti.composable
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import nl.vxti.ViewController
-import nl.vxti.common.*
-import nl.vxti.common.screen.Screen
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-internal fun ServerDrivenScreen(screen: Screen?, controller: ViewController) {
-    if (screen == null) {
-        return
-    }
-
-    val isRefreshing by controller.screenStateBusy.collectAsStateWithLifecycle()
-
-    PullToRefreshBox(
-        isRefreshing = isRefreshing,
-        onRefresh = { controller.refreshScreen() }
-    ) {
-        Column {
-            DynamicContentList(screen.content, controller)
-        }
-    }
-}
+import androidx.navigation.NavHostController
+import nl.vxti.common.components.ButtonComponent
+import nl.vxti.common.components.ImageComponent
+import nl.vxti.common.components.SearchBarComponent
+import nl.vxti.common.components.SpacerComponent
+import nl.vxti.common.components.TextComponent
+import nl.vxti.common.components.container.ListItemContainer
+import nl.vxti.common.components.container.CarouselContainerComponent
+import nl.vxti.common.components.models.IComponent
 
 @Composable
-internal fun DynamicContentList(components: List<ServerComponent>, controller: ViewController) {
+internal fun DynamicContentList(components: List<IComponent>, controller: NavHostController) {
     Column {
         reduceDuplicateComponents(components)
             .forEach { element -> DrawableComponentSequence(element, controller) }
@@ -38,7 +21,7 @@ internal fun DynamicContentList(components: List<ServerComponent>, controller: V
 }
 
 // Removes components with duplicate contentId, keeping only the first occurrence
-fun reduceDuplicateComponents(components: List<ServerComponent>): List<ServerComponent> {
+fun reduceDuplicateComponents(components: List<IComponent>): List<IComponent> {
     return components.groupBy { it.contentId }
         .filter { it.value.size == 1 }
         .flatMap { it.value }
@@ -46,14 +29,14 @@ fun reduceDuplicateComponents(components: List<ServerComponent>): List<ServerCom
 
 
 @Composable
-internal fun DrawableComponentSequence(component: ServerComponent, controller: ViewController) {
+internal fun DrawableComponentSequence(component: IComponent, controller: NavHostController) {
     when (component) {
-        is TextComponent -> TextComponentDrawable(component, controller)
-        is SpacerComponent -> SpacerDrawable(component, controller)
-        is SearchBarComponent -> SearchBarDrawable(component, controller)
-        is ButtonComponent -> ButtonDrawable(component, controller)
-        is ImageComponent -> ImageComponentDrawable(component, controller)
-        is ScrollableContainer -> ScrollContainerDrawable(component, controller)
-        is ListItemContainer -> ListItemContainerDrawable(component, controller)
+        is TextComponent -> TextComponentDrawable(component)
+        is SpacerComponent -> SpacerDrawable(component)
+        is SearchBarComponent -> SearchBarDrawable(component)
+        is ButtonComponent -> ButtonComposable(component)
+        is ImageComponent -> ImageComponentDrawable(component)
+        is CarouselContainerComponent -> CarouselContainerDrawable(component, controller)
+        is ListItemContainer -> ListItemContainerDrawable(component)
     }
 }

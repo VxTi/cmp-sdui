@@ -19,7 +19,7 @@ class ApplicationInitiationRoute(private val registry: ScreenRegistry) {
     )
     fun handler(
         @RequestAttribute(RequestHeader.ATTRIB_APP_CONTEXT) context: AppRequestContext
-    ): ScreenResponse? {
+    ): ScreenResponse {
         log.info(
             "Application initiated - Locale: {} - Version: {}", context.locale,
             context.appVersion,
@@ -31,7 +31,7 @@ class ApplicationInitiationRoute(private val registry: ScreenRegistry) {
     }
 
     companion object {
-        const val ROUTE: kotlin.String = "/"
+        const val ROUTE: String = "/"
 
         private val log = LoggerFactory.getLogger(ApplicationInitiationRoute::class.java);
     }

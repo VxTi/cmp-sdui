@@ -4,19 +4,20 @@ import nl.vxti.common.screen.Screen
 import nl.vxti.common.screen.ScreenTab
 import nl.vxti.core.AppRequestContext
 import nl.vxti.sdui.screen.*
+import nl.vxti.sdui.screen.models.IScreen
 import org.springframework.stereotype.Service
 
 @Service
-class ScreenRegistry(private val screens: MutableList<ScreenInstance>) {
+class ScreenRegistry(private val screens: MutableList<IScreen>) {
 
-    val all: MutableList<ScreenInstance>
+    val all: MutableList<IScreen>
         get() = this.screens
 
     fun getByIdentifier(screenIdentifier: String, context: AppRequestContext): Screen? {
         return this.screens.stream()
-            .filter { screen: ScreenInstance? -> screen?.name().equals(screenIdentifier) }
+            .filter { screen: IScreen? -> screen?.name().equals(screenIdentifier) }
             .findFirst()
-            .map { screen: ScreenInstance -> screen.createScreen(context) }
+            .map { screen: IScreen -> screen.create(context) }
             .orElse(null)
     }
 
@@ -25,7 +26,7 @@ class ScreenRegistry(private val screens: MutableList<ScreenInstance>) {
 
         return when {
             initial != null -> initial
-            screens.isNotEmpty() -> screens[0].createScreen(context)
+            screens.isNotEmpty() -> screens[0].create(context)
             else -> throw IllegalStateException("No screens available in the registry")
         }
 

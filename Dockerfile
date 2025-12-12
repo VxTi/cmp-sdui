@@ -8,28 +8,29 @@ WORKDIR /workspace
 # Copy Gradle wrapper and build files first to leverage Docker layer cache
 COPY gradlew .
 COPY gradle ./gradle
-COPY packages/sdui/build.gradle.kts ./
 COPY settings.gradle.kts ./
+COPY packages/sdui/build.gradle.kts ./packages/sdui/
+COPY packages/sdui-common/build.gradle.kts ./packages/sdui-common/
 
-# Pre-fetch dependencies (optional but speeds up subsequent builds)
-# The specific command might vary based on your project structure and plugins
-# This is a common way to download dependencies:
-RUN ./gradlew :packages:sdui:dependencies --info
+# Pre-fetch dependencies
+RUN ./gradlew :sdui:dependencies --info
+RUN ./gradlew :sdui-common:dependencies --info
 
 # Now copy sources and build
-COPY packages/sdui/src ./src
-RUN ./gradlew build -x test # Build the project, skipping tests
+COPY packages/sdui/src ./packages/sdui/src/
+COPY packages/sdui-common/src ./packages/sdui-common/src/
+
+RUN ./gradlew :sdui:build -x test # Build the project, skipping tests
 
 # 2) Runtime stage
-FROM openjdk:23-jdk
+FROM gradle:jdk23
 WORKDIR /app
 
 # Copy the built JAR from the builder stage and give it a stable name
 # Adjust the path to the JAR file based on your Gradle build output
-# Typically, it's in build/libs/your-project-name.jar
-COPY --from=build /workspace/build/libs/*.jar /app/app.jar
+COPY --from=build /workspace/packages/sdui/build/libs/*.jar app.jar
 
 EXPOSE 8080
 ENV SPRING_PROFILES_ACTIVE=docker
 ENV SERVER_PORT=8080
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
